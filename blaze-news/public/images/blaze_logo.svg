@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2702" height="458" viewBox="0 0 2702 458">
+  <defs>
+    <clipPath id="clip-Web_1920_3">
+      <rect width="2702" height="458"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_3" data-name="Web 1920 – 3" clip-path="url(#clip-Web_1920_3)">
+    <g id="_334751_slashdot_english_language_news_site_icon" data-name="334751_slashdot_english_language_news_site_icon" transform="translate(20 20)">
+      <path id="Path_1" data-name="Path 1" d="M0,0H416.1V416.1H0Z" fill="#0080ff"/>
+      <path id="Path_2" data-name="Path 2" d="M93.778,378.485,237.36,56h62.158L155.979,378.485ZM357.45,329.71a51.557,51.557,0,1,0-51.557,51.365A51.48,51.48,0,0,0,357.45,329.71Z" transform="translate(-17.566 -10.489)" fill="#fff"/>
+    </g>
+    <text id="blaze_news." data-name="blaze news." transform="translate(534 374)" fill="#fff" font-size="398" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="0" y="0">bla</tspan><tspan y="0" fill="#0080ff">z</tspan><tspan y="0">e</tspan><tspan y="0" fill="#0080ff"> </tspan><tspan y="0">news.</tspan></text>
+  </g>
+</svg>
