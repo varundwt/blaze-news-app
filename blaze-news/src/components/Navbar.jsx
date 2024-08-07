@@ -26,9 +26,11 @@ export const Navbar = () => {
         <li><a>Home</a></li>
         <li>
           <a>Explore</a>
-          <ul className="p-2">
-            <li><a>Stocks Today</a></li>
-            <li><a>Weather</a></li>
+          <ul className="p-2">            
+          <li><a>Entertainment</a></li>
+            <li><a>Business</a></li>
+            <li><a>Sports</a></li>            
+            <li><a>Health</a></li> 
           </ul>
         </li>
         <li><a>Contact Us</a></li>
@@ -42,9 +44,11 @@ export const Navbar = () => {
       <li>
         <details>
           <summary>Explore</summary>
-          <ul className="p-2">
-            <li><a>Stocks Today</a></li>
-            <li><a>Weather</a></li>
+          <ul className="p-2">            
+            <li><a>Entertainment</a></li>
+            <li><a>Business</a></li>
+            <li><a>Sports</a></li>            
+            <li><a>Health</a></li>                      
           </ul>
         </details>
       </li>
