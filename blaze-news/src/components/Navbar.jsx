@@ -1,6 +1,8 @@
 import Logo from "../../public/images/blaze_logo.svg"
+import Up from "../../public/images/trending_up.svg"
+import Down from "../../public/images/trending_down.svg"
 export const Navbar = () => {
-  return (
+  return (<>
     <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -53,5 +55,43 @@ export const Navbar = () => {
     <a className="btn rounded-xl">Login</a>
   </div>
 </div>
+<hr className="h-px bg-gray-900 border-0 dark:bg-gray-900"/>
+<div className="flex justify-between mx-4 my-2">
+    <div>
+      <div className="text-left text-sm font-semibold	sm:text-xl">Discover latest news</div>
+      <div className="text-left text-sm font-semibold	sm:text-xl">through Blaze.</div>
+    </div>
+    <div className=" text-center">
+      <div className="text-right text-xs sm:text-sm">Tuesday, Aug 6, 2024</div>
+      <div className="text-right text-xs sm:text-sm">12:28:12pm</div>
+    </div>    
+</div>
+<div className="flex justify-between mx-4 my-2 text-xs sm:text-sm">
+      <div>
+        <div>ONGC</div>
+        <div className="flex"><div className="text-green-500">7.27 </div>&nbsp;<img src={Up} className="h-4"/></div>        
+      </div>
+      <div>
+        <div>ADANIPORTS</div>
+        <div className="flex "><div className="text-green-500">9.45 </div>&nbsp;<img src={Up} className="h-4"/></div>        
+      </div>
+      <div>
+        <div>ICICIBANK</div>
+        <div className="flex"><div className="text-red-500">-0.15 </div>&nbsp;<img src={Down} className="h-4"/></div>        
+      </div>
+      <div>
+        <div>TATAMOTORS	</div>
+        <div className="flex "><div className="text-green-500">4.15 </div>&nbsp;<img src={Up} className="h-4"/></div>        
+      </div>
+      <div>
+        <div>TITAN</div>
+        <div className="flex"><div className="text-red-500">-3.30 </div>&nbsp;<img src={Down} className="h-4"/></div>        
+      </div>
+      <div>
+        <div>WIPRO</div>
+        <div className="flex "><div className="text-green-500">5.75 </div>&nbsp;<img src={Up} className="h-4"/></div>        
+      </div>
+    </div>
+</>
   )
 }
