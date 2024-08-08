@@ -1,6 +1,15 @@
 import Logo from "../../public/images/blaze_logo.svg"
 import Up from "../../public/images/trending_up.svg"
 import Down from "../../public/images/trending_down.svg"
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+const date = new Date();
+const thisMonth = monthNames[date.getMonth()] +' '+ date.getFullYear();
+
+//add real time and date here
+
 export const Navbar = () => {
   return (<>
     <div className="navbar bg-base-100">
