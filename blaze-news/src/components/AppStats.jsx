@@ -7,7 +7,7 @@ const thisMonth = monthNames[date.getMonth()] +' '+ date.getFullYear();
 export const AppStats = () => {
   return (
     <>
-    <div className="text-center w-full">
+    <div className="text-center w-full my-5">
     <div className="stats shadow">
   <div className="stat place-items-center">
     <div className="stat-title">App Traffic</div>
@@ -26,8 +26,11 @@ export const AppStats = () => {
     <div className="stat-value">1,200</div>
     <div className="stat-desc">↘︎ 90 (14%)</div>
   </div>
+  
 </div>
+
 </div>
+<hr className="h-px bg-gray-900 border-0 dark:bg-gray-900"/>       
     </>
   );
 };
