@@ -1,18 +1,23 @@
 import './App.css'
-import { AppStats } from './components/AppStats'
-import { Footer } from './components/Footer'
-import { HeroSection } from './components/HeroSection'
+import { Home } from './components/Home'
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { Contact } from './components/Contact'
 import { Navbar } from './components/Navbar'
-
+import { Footer } from './components/Footer'
 function App() {
   
   return (
-    <>
-      <Navbar/>
-      <HeroSection/>
-      <AppStats/>
+    
+    <BrowserRouter>
+    <Navbar/>
+      <Routes>
+      <Route path='/' element={<Home/>}/>
+        <Route index element = {<Home/>}/>
+        <Route path='contact' element ={<Contact/>}/>
+      </Routes>
       <Footer/>
-    </>
+    </BrowserRouter>
+    
   )
 }
 

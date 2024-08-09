@@ -55,7 +55,7 @@ const newsFeed = [{
 function Loading(){
     return(
         <>
-        <div className="w-auto justify-center text-center"><h2>Fetching Data</h2><span className="loading loading-infinity loading-lg justify-center h-10"></span></div>
+        <div className="w-auto h-96 py-5 justify-center text-center"><h2>Fetching Data</h2><span className="loading loading-infinity loading-lg justify-center h-10"></span></div>
             
         </>
     )
@@ -76,12 +76,12 @@ export const HeroSection = () => {
     {data ? newsFeed.map((cardData,i)=>(
         <div className="card bg-base-100 w-auto  shadow-xl  my-5 sm:mx-10" key={i}>
         <div className="card-body py-3">
-          <h2 className="card-title font-bold">{cardData.title}</h2>
-          <p className="text-xs sm:text-sm">{cardData.context}</p>
+          <h2 className="card-title font-bold sm:text-3xl">{cardData.title}</h2>
+          <p className="text-xs italic sm:text-sm">{cardData.context}</p>
         </div>
         <div className="flex flex-column">
         <figure>
-          <img className="px-8"
+          <img className="px-8" 
             src={cardData.image}
             alt="Shoes"
           />
