@@ -1,7 +1,9 @@
 export const Contact = () => {
+  //try creating a popup on submit button
+  //create a login logout switch and a login page.
   return (
     <>
-      <div className="py-2 px-10 mx-10 lg:px-42 md:px-40 sm:px-36">
+      <div className="py-2 px-4 mx-10 lg:px-42 md:px-40 sm:px-36">
         <h1 className="text-center py-6 text-3xl font-semibold">
           We would love to hear from you!
         </h1>
