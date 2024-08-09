@@ -1,16 +1,29 @@
+import { useEffect, useState } from "react";
 import Logo from "../../public/images/blaze_logo.svg"
 import Up from "../../public/images/trending_up.svg"
 import Down from "../../public/images/trending_down.svg"
 
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
 const date = new Date();
-const thisMonth = monthNames[date.getMonth()] +' '+ date.getFullYear();
-
-//add real time and date here
-
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const showDate =  monthNames[date.getMonth()] +' '+ date.getDate() +', '+date.getFullYear();
+ 
 export const Navbar = () => {
+
+  const[myTime, setMyTime] = useState();
+  
+   function updateTime(){
+    const showTime = new Date().toLocaleTimeString()
+    const showDate = new Date().toLocaleDateString()
+    setMyTime(showTime)
+    console.log(showDate);
+    
+   }
+  useEffect(()=>{
+    setInterval(() => {
+      updateTime()
+    },1000);
+  },)
+
   return (<>
     <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -75,8 +88,8 @@ export const Navbar = () => {
       <div className="text-left text-sm font-semibold	sm:text-xl">through Blaze.</div>
     </div>
     <div className=" text-center">
-      <div className="text-right text-xs sm:text-sm">Tuesday, Aug 6, 2024</div>
-      <div className="text-right text-xs sm:text-sm">12:28:12pm</div>
+      <div className="text-right text-xs sm:text-sm">{showDate}</div>
+      <div className="text-right text-xs sm:text-sm">{myTime}</div>
     </div>    
 </div>
 <div className="flex justify-between mx-4 my-2 text-xs sm:text-sm">
