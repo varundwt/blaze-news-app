@@ -31,21 +31,7 @@ export const Navbar = () => {
               <Link to="/"><a>Home</a></Link>
               </li>
               <li>
-                <a>Explore</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Entertainment</a>
-                  </li>
-                  <li>
-                    <a>Business</a>
-                  </li>
-                  <li>
-                    <a>Sports</a>
-                  </li>
-                  <li>
-                    <a>Health</a>
-                  </li>
-                </ul>
+              <Link to="/weather"><a>Weather</a></Link>            
               </li>
               <li>
                 <Link to="/contact"><a>Contact Us</a></Link>
@@ -60,23 +46,7 @@ export const Navbar = () => {
               <Link to="/"><a>Home</a></Link>
             </li>
             <li>
-              <details>
-                <summary>Explore</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Entertainment</a>
-                  </li>
-                  <li>
-                    <a>Business</a>
-                  </li>
-                  <li>
-                    <a>Sports</a>
-                  </li>
-                  <li>
-                    <a>Health</a>
-                  </li>
-                </ul>
-              </details>
+              <Link to="/weather"><a>Weather</a></Link> 
             </li>
             <li>
             <Link to="/contact"><a>Contact Us</a></Link>
@@ -84,7 +54,7 @@ export const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn rounded-xl">Login</a>
+          <Link to="/login"><a className="btn rounded-xl">Login</a></Link>
         </div>
       </div>
       <hr className="h-px bg-gray-900 border-0 dark:bg-gray-900" />

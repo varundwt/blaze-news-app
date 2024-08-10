@@ -18,7 +18,7 @@ export const Contact = () => {
           className="input input-bordered input-primary w-full max-w-full rounded-lg m-1"
         />        
         <textarea className="textarea textarea-bordered w-full m-1 rounded-lg" placeholder="Please type here..."></textarea>
-        <button className="tn btn-active btn-primary font-bold btn-md sm:btn-md md:btn-md lg:btn-md rounded-lg">Submit</button>
+        <button className="tn btn-active btn-primary font-bold btn-md sm:btn-md md:btn-md lg:btn-md rounded-lg mx-1">Submit</button>
       </div>      
     </>
   );
