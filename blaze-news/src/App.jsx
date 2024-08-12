@@ -6,7 +6,7 @@ import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { Login } from './components/Login'
 import { Weather } from './components/Weather'
-import { BlazeWeather } from './components/BlazeWeather'
+
 
 function App() {  
   return (    
@@ -17,8 +17,7 @@ function App() {
         <Route index element = {<Home/>}/>
         <Route path='contact' element ={<Contact/>}/>
         <Route path='login' element={<Login/>}/>
-        <Route path='weather' element={<Weather/>}/>
-        <Route path='weather/blazeweather' element={<BlazeWeather/>}/>
+        <Route path='weather' element={<Weather/>}/>       
       </Routes>
       <Footer/>
     </BrowserRouter>    

@@ -2,7 +2,7 @@ export const Login = () => {
         
   return (
     <>
-      <div className="py-2 px-2 mx-10 lg:px-42 md:px-40 md:mx-30 sm:px-36 lg:mx-60">
+      <div className="py-28 px-2 mx-10 lg:px-42 md:px-40 md:mx-30 sm:px-36 lg:mx-60">
         <h1 className="text-center py-6 text-3xl font-semibold  text-blue-300">
           Sign in to your account.
         </h1>

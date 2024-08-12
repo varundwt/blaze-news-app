@@ -3,7 +3,7 @@ export const Contact = () => {
   //create a login logout switch and a login page.
   return (
     <>
-      <div className="py-2 px-4 mx-10 lg:px-42 md:px-40 sm:px-36">
+      <div className="py-28 px-4 mx-10 lg:px-42 md:px-40 sm:px-36">
         <h1 className="text-center py-6 text-3xl font-semibold  text-blue-300">
           We would love to hear from you!
         </h1>
