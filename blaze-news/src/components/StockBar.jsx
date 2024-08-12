@@ -62,7 +62,7 @@ const showDate =
           </div>
         </div>
         <div>
-          <div>ADANIPORTS</div>
+          <div>ADANIOIL</div>
           <div className="flex ">
             <div className="text-green-500">9.45 </div>&nbsp;
             <img src={Up} className="h-4" />
