@@ -102,7 +102,7 @@ const health = [{
 function Loading() {
   return (
     <>
-      <div className="w-1  h-96 p-36 justify-center text-center">
+      <div className="w-full h-screen p-36 justify-center text-center">
         <h2 className=" ">Fetching Data</h2>
         <span className="loading loading-infinity loading-lg justify-center h-10"></span>
       </div>
@@ -168,13 +168,9 @@ export const HeroSection = () => {
           </div>
           </>
         ))}
+        </div>         
         </div>
-        
-        
-          
-        </div>
-        </div>
-        
+        </div>        
       </div> : <Loading/>}
       
     </>
