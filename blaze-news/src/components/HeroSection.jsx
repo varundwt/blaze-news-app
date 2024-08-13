@@ -1,5 +1,4 @@
 import { useState } from "react";
-import General from "../utils/general.json";
 
 const newsFeed = [
   {
@@ -111,8 +110,7 @@ function Loading() {
 }
 
 export const HeroSection = () => {
-  const [data, setData] = useState(false);
-  console.log(General);
+  const [data, setData] = useState(false);  
   setTimeout(() => {
     setData(true);
   }, 5000);
