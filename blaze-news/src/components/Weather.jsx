@@ -1,5 +1,12 @@
-//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+//TODAY
+//https://api.openweathermap.org/data/2.5/weather?q=dwarahat&appid=8237cab4faabbc43f64c9a1cdf207a6a
 //API 8237cab4faabbc43f64c9a1cdf207a6a
+
+//FORECAST
+//https://api.openweathermap.org/data/2.5/forecast?q=dwarahat&appid=8237cab4faabbc43f64c9a1cdf207a6a
+
+//AQI
+//http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=29.7760&lon=79.4268&appid=8237cab4faabbc43f64c9a1cdf207a6a
 
 import { useState } from "react";
 export const Weather = () => {
@@ -26,7 +33,9 @@ export const Weather = () => {
             </div>
           </div>
         </div>
-      ) : <div className="m-24"></div>}
+      ) : (
+        <div className="m-24"></div>
+      )}
 
       <div className=" text-center">
         <input
@@ -42,6 +51,26 @@ export const Weather = () => {
           Check Weather
         </button>
       </div>
+      {button && (
+        <div className="flex justify-between border rounded-lg p-5 mx-16 my-5 ">
+        
+        <div className="">
+          Image
+        </div>
+        <div className="text-left">
+          <div>27°C</div>
+          <div>Sunny</div>
+          <div>Clear Sky</div>
+        </div>
+        <div className="text-right">
+        <div>Air Quality : Excellent</div>
+        <div>Wind : 9km/h</div>
+        <div>Humidity: 85</div>
+        <div>Pressure: 10%</div>
+        </div>
+        
+        </div>
+      )}
     </>
   );
 };
