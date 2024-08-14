@@ -1,11 +1,13 @@
+import {Link} from 'react-router-dom'
+
 export const Footer = () => {
   return (
     <footer className="footer footer-center bg-base-100 text-base-content rounded p-10">
       <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <Link to="https://www.linkedin.com/in/semiintrovert/"><a className="link link-hover">About</a></Link>
+        <Link to="/contact"><a className="link link-hover">Contact</a></Link>
+        <Link to="https://varunpandey-portfolio.vercel.app/"><a className="link link-hover">Reach Us</a></Link>
+        
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
@@ -49,7 +51,8 @@ export const Footer = () => {
           Copyright © {new Date().getFullYear()} - All right reserved by Varun
           Pandey
         </p>
-      </aside>
+      </aside>      
     </footer>
+    
   );
 };
