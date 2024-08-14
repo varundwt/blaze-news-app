@@ -57,13 +57,13 @@ export const Weather = () => {
       ) : (
         <div className="m-24"></div>
       )}
-      <div className=" text-center">
+      <div className="flex w-screen justify-center  ">
         <input
           type="text"
           placeholder="Enter your city"
           onChange={handleInput}
-          className="input input-bordered w-full max-w-xs rounded-lg"
-        />
+          className="input input-bordered rounded-lg"
+        /> <br/>
         &nbsp;
         <button
           onClick={() => getWeather()}
