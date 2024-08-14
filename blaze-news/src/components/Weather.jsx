@@ -24,8 +24,7 @@ export const Weather = () => {
 
   function handleInput(e){
     setInput(e.target.value);
-    console.log(input);
-    
+    console.log(input);    
   }
 
   async function getWeather() {
@@ -34,7 +33,7 @@ export const Weather = () => {
     );
     const getDataJSON = await getData.json();
     setWeatherData(getDataJSON);
-    setButton(true);
+    setButton(true);    
   }
 
   return (
@@ -73,18 +72,20 @@ export const Weather = () => {
           Check Weather
         </button>
       </div>
+      
       {weatherData != null && (
         <>
-          <div className="border border-blue-500 bg-blue-900 rounded-lg p-5 mx-8 my-5 md:mx-8 lg:mx-30">
+          <div className="border border-blue-500 bg-blue-900 rounded-lg p-5 mx-3 my-5 md:mx-8 lg:mx-30">
             <div className="flex justify-between">
               <div className="text-3xl font-bold ">
                 📍{weatherData.name}, {weatherData.sys.country}
+                <div className="text-sm font-normal mt-auto mb-auto">
+                &nbsp;&nbsp;&nbsp;⏲{weatherData.coord.lon}, {weatherData.coord.lat}
               </div>
-              <div className="text-lg font-semibold mt-auto mb-auto">
-              ⌖ {weatherData.coord.lon}, {weatherData.coord.lat}
               </div>
+              
             </div>
-            <div className="flex-row md:flex justify-between px-10 py-10 md:px-1 md:py-0 lg:mx-12">
+            <div className="flex-row md:flex justify-between px-1 py-10 md:px-1 md:py-0 lg:mx-12">
               <div className="block ml-auto mr-auto w-1/2 md:ml-0 md:mr-0 md:w-1/3 md:py-2">
                 {weatherData.weather[0].main == "Clear" && (
                   <img src={ClearSky} alt="weather-icon" className="w-60 md:w-80" />
@@ -104,7 +105,31 @@ export const Weather = () => {
                 {weatherData.weather[0].main == "Snow" && (
                   <img src={Snow} alt="weather-icon" className="w-60 md:w-80" />
                 )}
-                {weatherData.weather[0].main == "Atmosphere" && (
+                {weatherData.weather[0].main == "Haze" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Mist" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Smoke" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Dust" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Fog" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Sand" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Ash" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Squall" && (
+                  <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
+                )}
+                {weatherData.weather[0].main == "Tornado" && (
                   <img src={Mist} alt="weather-icon" className="w-60 md:w-80" />
                 )}
               </div>
@@ -120,7 +145,7 @@ export const Weather = () => {
               </div>
               <div className="py-10 md:py-12 md:mt-auto md:mb-auto border rounded-xl p-7 md:p-1">
               <div className="text-center justify-between text-lg py-2 md:text-center flex md:flex-wrap md:text-sm">
-                <div className="px-1 md:px-3 font-bold text-blue-200">Wind <div className="font-normal text-blue-100">{weatherData.wind.speed} km/h</div> </div>
+                <div className="px-1 md:px-3 font-bold text-blue-200">Wind <div className="font-normal text-blue-100 ">{weatherData.wind.speed} km/h</div> </div>
                 <div className="px-1 md:px-3 font-bold text-blue-200">Gust <div className="font-normal text-gray-100">{weatherData.wind.gust} km/h</div> </div>
                 <div className="px-1 md:px-3 font-bold text-blue-200">Humidity <div className="font-normal text-gray-100">{weatherData.main.humidity} %</div></div>                
               </div>
