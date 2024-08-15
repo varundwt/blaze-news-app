@@ -77,26 +77,94 @@ const newsFeed = [
   },
 ];
 
-const health = [{
-  id:1,
-  title:"Breakthrough Gene Therapy Cures Major Genetic Disorders: Era of Personalized Medicine Dawns",
-  dropdown:"Scientists successfully employ CRISPR-Cas9 gene editing to treat multiple genetic diseases, marking a turning point in healthcare. Personalized treatment plans based on individual genetic makeup become the norm, leading to more effective and targeted therapies."
-},
-{
-  id:2,
-  title:"Global Surge in Mental Health Crisis Prompts Urgent Call for Increased Support",
-  dropdown:"Rising rates of anxiety, depression, and other mental health conditions strain healthcare systems worldwide. Governments and organizations invest heavily in mental health resources, including prevention, treatment, and support services."
-},
-{
-  id:3,
-  title:"Antibiotic Resistance Reaches Critical Level: Scientists Race Against Time to Develop New Treatments",
-  dropdown:"Superbugs become increasingly resistant to antibiotics, posing a serious threat to public health. Researchers explore alternative therapies like phage therapy and develop innovative antibiotics to combat the crisis."
-},
-{
-  id:4,
-  title:"Plant-Based Diets Proven to Reverse Chronic Diseases: Dietary Guidelines Under Review",
-  dropdown:"Large-scale studies demonstrate the efficacy of plant-based diets in preventing and reversing conditions like heart disease and diabetes. Health organizations worldwide update dietary recommendations to emphasize the benefits of plant-based nutrition."
-}];
+const health = [
+  {
+    id: 1,
+    title:
+      "Breakthrough Gene Therapy Cures Major Genetic Disorders: Era of Personalized Medicine Dawns",
+    dropdown:
+      "Scientists successfully employ CRISPR-Cas9 gene editing to treat multiple genetic diseases, marking a turning point in healthcare. Personalized treatment plans based on individual genetic makeup become the norm, leading to more effective and targeted therapies.",
+  },
+  {
+    id: 2,
+    title:
+      "Global Surge in Mental Health Crisis Prompts Urgent Call for Increased Support",
+    dropdown:
+      "Rising rates of anxiety, depression, and other mental health conditions strain healthcare systems worldwide. Governments and organizations invest heavily in mental health resources, including prevention, treatment, and support services.",
+  },
+  {
+    id: 3,
+    title:
+      "Antibiotic Resistance Reaches Critical Level: Scientists Race Against Time to Develop New Treatments",
+    dropdown:
+      "Superbugs become increasingly resistant to antibiotics, posing a serious threat to public health. Researchers explore alternative therapies like phage therapy and develop innovative antibiotics to combat the crisis.",
+  },
+  {
+    id: 4,
+    title:
+      "Plant-Based Diets Proven to Reverse Chronic Diseases: Dietary Guidelines Under Review",
+    dropdown:
+      "Large-scale studies demonstrate the efficacy of plant-based diets in preventing and reversing conditions like heart disease and diabetes. Health organizations worldwide update dietary recommendations to emphasize the benefits of plant-based nutrition.",
+  },
+];
+
+const technology = [
+  {
+    id: 1,
+    image:
+      "https://images.indianexpress.com/2024/08/motorola-edge-50-review.jpg?w=640",
+    title:
+      "Motorola Edge 50 made me realise flagship smartphone experience need not cost a lot",
+    description:
+      "Motorola Edge 50 is one of the most unique smartphones in this price range, with an emphasis on practicality rather than sheer performance.",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.indianexpress.com/2024/08/Tech-feature-images25.jpg?w=640",
+    title: "Cisco Systems to cut about 7% of staff in second round of layoffs",
+    description:
+      "Like other big tech companies, Cisco has raced to take advantage of an industry-wide shift into artificial intelligence.",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.indianexpress.com/2024/08/WhatsApp-Express-Photo-3-1_caddfb.jpeg?w=640",
+    title:
+      "WhatsApp gets GIPHY integration, brings ‘Custom Sticker Maker’ to Android",
+    description:
+      "WhatsApp`s Custom Sticker Maker tool, which has previously exclusive to Apple devices is now available on Android.",
+  },
+];
+
+const trending = [
+  {
+    id: 1,
+    image:
+      "https://images.indianexpress.com/2024/08/ch1154405.jpg?w=640",
+    title:
+      "As Uttarakhand political winds indicate a shift, tight contest on the cards for Kedarnath Assembly seat",
+    description:
+      "Since the state was created, the BJP has won the seat thrice and the Congress twice. In the bypoll, necessitated by the death of BJP’s sitting MLA, temples and religious tourism are expected to be the key issues",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.indianexpress.com/2024/08/modi-31-1.jpg?w=640",
+    title: "Has BJP ‘aged’? As perked Opposition projects youth, new faces, party hopes to shed years",
+    description:
+      "While little separates leaders on the two sides in terms of actual years, Congress has an edge in perception; BJP says its rival’s new line-up a factor of compulsion rather than choice",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.indianexpress.com/2024/08/collage_622f76.jpg?w=640",
+    title:
+      "Punjab questions Centre ‘warning’ to scrap road projects over ‘law, order’, says ‘just listen to the farmers’",
+    description:
+      "As Oppn seizes this to attack Mann govt, AAP points to NCRB data to refute law, order claims in letter from Union minister Nitin Gadkari, says problems localised",
+  },
+];
 
 function Loading() {
   return (
@@ -110,7 +178,7 @@ function Loading() {
 }
 
 export const HeroSection = () => {
-  const [data, setData] = useState(false);  
+  const [data, setData] = useState(false);
   setTimeout(() => {
     setData(true);
   }, 5000);
@@ -118,10 +186,10 @@ export const HeroSection = () => {
   return (
     <>
       <div className="divider divider-info">Latest News</div>
-      {data ? <div className=" flex flex-col lg:flex-row">
-        <div>
-          
-            {newsFeed.map((cardData, i) =>(
+      {data ? (
+        <div className=" flex flex-col lg:flex-row">
+          <div>
+            {newsFeed.map((cardData, i) => (
               <>
                 <div
                   className="card bg-base-100 w-auto  shadow-xl  my-5 sm:mx-10"
@@ -146,31 +214,72 @@ export const HeroSection = () => {
                   <hr className="h-px bg-gray-900 border-0 dark:bg-gray-900" />
                 </div>
               </>
-            ))
-          }
-        </div>
-        <div>
-        <div>
-        {data && <div className="divider divider-info mt-8">Health</div>}
-        <div className="mx-8 lg:py-1 lg:mx-43">
-        { data && health.map((item, i)=>(
-          <>
-          <div className="bg-blue-500 collapse rounded-lg my-2" key={i}>
-            <input type="checkbox" className="peer" />
-            <div className="collapse-title bg-base text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content lg:w-80 font-semibold italic">
-            {item.title}
-            </div>
-            <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-              <p className="text-xs">{item.dropdown}</p>
+            ))}
+          </div>
+          <div>
+            <div>
+              <div className="divider divider-info mt-8">Trending</div>
+              {data &&
+                trending.map((item, i) => (
+                  <>
+                    <div
+                      className="card card-compact bg-slate-900 lg:w-96 shadow-xl w-50 my-10 border rounded-xl m-5 py-8 lg:py-4 border-blue-600"
+                      id={i}
+                    >
+                      <figure className="lg:px-4 px-8">
+                        <img src={item.image} alt="card-image" />
+                      </figure>
+                      <div className="card-body px-4">
+                        <h2 className="card-title px-4 lg:px-0">{item.title}</h2>
+                        <p className="px-4 lg:px-0">{item.description}</p>
+                      </div>
+                    </div>
+                  </>
+                ))}
+                <div className="divider divider-info mt-8">Technology</div>
+                {data &&
+                technology.map((item, i) => (
+                  <>
+                    <div
+                      className="card card-compact bg-slate-900 lg:w-96 shadow-xl w-50 my-10 border rounded-xl m-5 py-8 lg:py-4 border-blue-600"
+                      id={i}
+                    >
+                      <figure className="lg:px-4 px-8">
+                        <img src={item.image} alt="card-image" />
+                      </figure>
+                      <div className="card-body px-4">
+                        <h2 className="card-title px-4 lg:px-0">{item.title}</h2>
+                        <p className="px-4 lg:px-0">{item.description}</p>
+                      </div>
+                    </div>
+                  </>
+                ))}
+              {data && <div className="divider divider-info mt-8">Health</div>}
+              <div className="mx-8 lg:py-1 lg:mx-43">
+                {data &&
+                  health.map((item, i) => (
+                    <>
+                      <div
+                        className="bg-blue-500 collapse rounded-lg my-2"
+                        key={i}
+                      >
+                        <input type="checkbox" className="peer" />
+                        <div className="collapse-title bg-base text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content lg:w-80 font-semibold italic">
+                          {item.title}
+                        </div>
+                        <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                          <p className="text-xs">{item.dropdown}</p>
+                        </div>
+                      </div>
+                    </>
+                  ))}
+              </div>
             </div>
           </div>
-          </>
-        ))}
-        </div>         
         </div>
-        </div>        
-      </div> : <Loading/>}
-      
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };
