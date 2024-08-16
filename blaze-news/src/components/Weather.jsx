@@ -1,13 +1,3 @@
-//TODAY
-//https://api.openweathermap.org/data/2.5/weather?q=dwarahat&appid=8237cab4faabbc43f64c9a1cdf207a6a
-//API 8237cab4faabbc43f64c9a1cdf207a6a
-
-//FORECAST
-//https://api.openweathermap.org/data/2.5/forecast?q=dwarahat&appid=8237cab4faabbc43f64c9a1cdf207a6a
-
-//AQI
-//http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=29.7760&lon=79.4268&appid=8237cab4faabbc43f64c9a1cdf207a6a
-
 import { useState } from "react";
 import BrokenClouds from "../../public/images/broken_clouds.svg";
 import ClearSky from "../../public/images/clear_sky.svg";
