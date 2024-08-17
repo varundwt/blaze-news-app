@@ -1,11 +1,17 @@
 import { useState } from "react";
-import BrokenClouds from "../../public/images/broken_clouds.svg";
-import ClearSky from "../../public/images/clear_sky.svg";
-import FewClouds from "../../public/images/few_clouds.svg";
-import Mist from "../../public/images/mist.svg";
-import Rain from "../../public/images/rain.svg";
-import Snow from "../../public/images/snow.svg";
-import Thunderstorm from "../../public/images/thunderstorm.svg";
+import BrokenClouds from "/images/broken_clouds.svg";
+import ClearSky from "/images/clear_sky.svg";
+import FewClouds from "/images/few_clouds.svg";
+import Mist from "/images/mist.svg";
+import Rain from "/images/rain.svg";
+import Snow from "/images/snow.svg";
+import Thunderstorm from "/images/thunderstorm.svg";
+import CloudCover from "/images/ico_cloud_cover.svg"
+import Gust from "/images/ico_gust.svg"
+import Humidity from "/images/ico_humidity.svg"
+import Pressure from "/images/ico_pressure.svg"
+import Visibilty from "/images/ico_visibility.svg"
+import Wind from "/images/ico_wind.svg"
 
 const date = new Date();
 const currentMonth = date.getMonth() + 1;
@@ -253,7 +259,7 @@ export const Weather = () => {
 
       {weatherData != null && (
         <>
-          <div className="border border-zinc-900 bg-zinc-900 rounded-lg p-5 mx-3 my-5 md:mx-8 lg:mx-300">
+          <div className="border border-zinc-900 bg-zinc-900 rounded-lg p-5 mx-3 my-5 md:mx-8 lg:mx-40">
             <div className="flex justify-between">
               <div className="text-3xl font-bold ">
                 📍{weatherData.name}, {weatherData.sys.country}
@@ -263,7 +269,7 @@ export const Weather = () => {
                 </div>
               </div>
             </div>
-            <div className="flex-row md:flex justify-between px-1 py-10 md:px-1 md:py-0 lg:mx-12">
+            <div className="flex-row md:flex justify-between px-1 py-10 md:px-1 md:py-0 lg:mx-2">
               <div className="block ml-auto mr-auto w-1/2 md:ml-0 md:mr-0 md:w-1/3 md:py-2">
                 {weatherData.weather[0].main == "Clear" && (
                   <img
@@ -328,13 +334,13 @@ export const Weather = () => {
                 )}
               </div>
               <div className="text-center md:text-left md:mt-auto md:mb-auto lg:mt-auto lg:mb-auto">
-                <div className="text-white text-5xl font-bold lg:text-8xl md:text-6xl md:h-20 lg:my-5">
+                <div className="text-white text-5xl font-bold lg:text-6xl md:text-6xl md:h-20 lg:my-0">
                   {Math.floor(Math.floor(weatherData.main.temp) / 10)}°C
                 </div>
-                <div className="text-3xl text-blue-200 font-bold py-2 md:py-0 md:pb-0">
+                <div className="text-3xl text-blue-200 font-bold py-2 md:py-0 md:pb-0 lg:text-2xl">
                   {weatherData.weather[0].main}
                 </div>
-                <div className="text-xl text-blue-200 mb-6">
+                <div className="text-xl text-blue-200 mb-6 lg:text-lg">
                   {weatherData.weather[0].description.charAt(0).toUpperCase() +
                     weatherData.weather[0].description.slice(1)}
                 </div>
@@ -342,18 +348,21 @@ export const Weather = () => {
               <div className="py-10 md:py-12 md:mt-auto md:mb-auto border rounded-xl p-7 md:p-1">
                 <div className="text-center justify-between text-lg py-2 md:text-center flex md:flex-wrap md:text-sm">
                   <div className="px-1 md:px-3 font-bold text-blue-200">
+                    <img src={Wind} alt="wind" className="h-12 mx-auto my-auto md:h-8"/>
                     Wind{" "}
-                    <div className="font-normal text-blue-100 ">
+                    <div className="font-normal text-blue-100">
                       {weatherData.wind.speed} km/h
                     </div>{" "}
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
+                  <img src={Gust} alt="gust" className="h-12 mx-auto my-auto md:h-8"/>
                     Gust{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.wind.gust} km/h
                     </div>{" "}
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
+                  <img src={Humidity} alt="humidity" className="h-12 mx-auto my-auto md:h-8"/>
                     Humidity{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.main.humidity} %
@@ -362,18 +371,21 @@ export const Weather = () => {
                 </div>
                 <div className="text-center justify-between text-lg py-2 md:text-center flex md:flex-wrap md:text-sm mt-5">
                   <div className="px-1 md:px-3 font-bold text-blue-200">
+                  <img src={Pressure} alt="pressure" className="h-12 mx-auto my-auto md:h-8"/>
                     Pressure{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.main.pressure} mB
                     </div>
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
+                  <img src={CloudCover} alt="cloud-cover" className="h-12 mx-auto my-auto md:h-8"/>
                     Cloud Cover{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.clouds.all} %
                     </div>
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
+                  <img src={Visibilty} alt="visibilty" className="h-12 mx-auto my-auto md:h-8"/>
                     Visibilty{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.visibility / 1000} km
