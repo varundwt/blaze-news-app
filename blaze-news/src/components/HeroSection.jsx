@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const newsFeed = [
   {
@@ -177,18 +177,110 @@ function Loading() {
   );
 }
 
+const hindiNews = [
+      {
+        "uuid": "ac282ff8-d4a3-4449-929e-7cf1f953bc75",
+        "title": "मर्दों की तुलना में औरतों का रात में बाहर निकलना कितना आसान?",
+        "description": "कोलकाता में महिला डॉक्टर के रेप और हत्या के बाद महिलाओं की आज?...",
+        "keywords": "",
+        "snippet": "मर्दों की तुलना में औरतों का रात में बाहर निकलना कितना आसान? - ?...",
+        "url": "https://www.bbc.com/hindi/articles/c5ydp9qd0q7o",
+        "image_url": "https://ichef.bbci.co.uk/news/1024/branded_hindi/50ea/live/7b484130-5bf6-11ef-bc21-35ec0cfc9e20.jpg",
+        "language": "hi",
+        "published_at": "2024-08-17T02:38:54.000000Z",
+        "source": "bbchindi.com",
+        "categories": [
+          "general"
+        ],
+        "relevance_score": null
+      },
+      {
+        "uuid": "e2cc862d-9171-4400-a705-7ef050643dbb",
+        "title": "हरियाणा विधानसभा चुनाव: बीजेपी-जेजेपी गठबंधन की टूट से लेकर कांग्रेस की 'चार्जशीट' तक",
+        "description": "हरियाणा में पिछला विधानसभा चुनाव अक्टूबर 2019 में हुआ था. उस वक़...",
+        "keywords": "",
+        "snippet": "हरियाणा विधानसभा चुनाव: बीजेपी-जेजेपी गठबंधन की टूट से लेकर ?...",
+        "url": "https://www.bbc.com/hindi/articles/cy9evypn4p8o",
+        "image_url": "https://ichef.bbci.co.uk/news/1024/branded_hindi/1ea6/live/9ce9fb00-5bdb-11ef-8c32-f3c2bc7494c6.jpg",
+        "language": "hi",
+        "published_at": "2024-08-17T01:42:20.000000Z",
+        "source": "bbchindi.com",
+        "categories": [
+          "general"
+        ],
+        "relevance_score": null
+      },
+      {
+        "uuid": "39fe3a37-b589-4289-ad02-8ec9b6ed149b",
+        "title": "कानपुर के पास साबरमती एक्सप्रेस पटरी से उतरी, सभी यात्री सुरक्षित, रेलवे ने जारी किया हेल्पलाइन नंबर",
+        "description": "Sabarmati Express Derail: कानपुर और भीमसेन स्टेशन के बीच ब्लॉक सेक्शन में सा?...",
+        "keywords": "Sabarmati Express derails, साबरमती एक्सप्रेस पटरी से उतरी, Train derailed, Kanpur rail accident, railway accident, railway helpline number, ट्रेन पटरी से उतरी, कानपुर रेल हादसा, रेल हादस, रेलवे हेल्पलाइन नंबर",
+        "snippet": "वाराणसी से अहमदाबाद जा रही साबरमती एक्सप्रेस (19168) देर रात करी?...",
+        "url": "https://ndtv.in/india/train-accident-sabarmati-express-derails-in-kanpur-all-passengers-safe-railways-releases-helpline-number-6354899#publisher=newsstand",
+        "image_url": "https://c.ndtvimg.com/2024-08/bpn15gb8_train_625x300_17_August_24.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
+        "language": "hi",
+        "published_at": "2024-08-17T01:26:26.000000Z",
+        "source": "ndtv.com",
+        "categories": [
+          "general"
+        ],
+        "relevance_score": null
+      }
+    ]
+  
+
 export const HeroSection = () => {
   const [data, setData] = useState(false);
+  const [latestNews, setLatestNews] = useState();
+
+  async function handleHindiNews() {
+    const newsData = await fetch("https://inshortsapi.vercel.app/news?category=all");
+    const newsDataJSON = await newsData.json();
+    setLatestNews(newsDataJSON.data);
+    console.log(latestNews);          
+  }
+  useEffect(()=>{
+    handleHindiNews();
+  },[])
+
   setTimeout(() => {
     setData(true);
-  }, 5000);
+  }, 4000);
 
   return (
     <>
       <div className="divider divider-info">Latest News</div>
       {data ? (
         <div className=" flex flex-col lg:flex-row">
-          <div>
+          <div>          
+          
+          {latestNews.map((cardData, i) => (
+              <>
+                <div
+                  className="card bg-base-100 w-auto shadow-xl my-5 sm:mx-10"
+                  key={i}
+                >
+                  <div className="card-body py-3">
+                    <h2 className="card-title font-bold sm:text-3xl">
+                      {cardData.title}
+                    </h2>
+                    <p className="text-xs italic sm:text-sm">
+                      {cardData.date} | {cardData.time}
+                    </p>
+                  </div>
+                  <div className="flex flex-column">
+                    <figure>
+                      <img className="px-8 w-screen md:w-screen" src={cardData.imageUrl} alt="card-image" />
+                    </figure>
+                  </div>
+                  <p className="text-justify px-8 py-2 pb-6 text-xs sm:text-sm">
+                    {cardData.content} &nbsp;&nbsp;<a className="text-blue-600 italic" href={cardData.readMoreUrl}>Read More...</a>
+                  </p>
+                  <hr className="h-px bg-gray-900 border-0 dark:bg-gray-900" />
+                </div>
+              </>
+            ))
+            }
             {newsFeed.map((cardData, i) => (
               <>
                 <div
@@ -205,7 +297,7 @@ export const HeroSection = () => {
                   </div>
                   <div className="flex flex-column">
                     <figure>
-                      <img className="px-8" src={cardData.image} alt="Shoes" />
+                      <img className="px-8 md:w-screen" src={cardData.image} alt="Shoes" />
                     </figure>
                   </div>
                   <p className="text-justify px-8 py-2 pb-6 text-xs sm:text-sm">
@@ -217,8 +309,26 @@ export const HeroSection = () => {
             ))}
           </div>
           <div>
-            <div>
-              <div className="divider divider-info mt-8">Trending</div>
+            <div>            
+            <div className="divider divider-info mt-8">Hindi News</div>
+              {data &&
+                hindiNews.map((item, i) => (
+                  <>
+                    <div
+                      className="card card-compact bg-slate-900 lg:w-96 shadow-xl w-50 my-10 border rounded-xl m-5 py-8 lg:py-4 border-blue-600"
+                      id={i}
+                    >
+                      <figure className="lg:px-4 px-8">
+                        <img src={item.image_url} alt="card-image" />
+                      </figure>
+                      <div className="card-body px-4">
+                        <h2 className="card-title px-4 lg:px-0">{item.title}</h2>
+                        <p className="px-4 lg:px-0">{item.description}&nbsp;&nbsp;<a className="text-blue-600 italic" href={item.url}>Read More...</a></p>
+                      </div>
+                    </div>
+                  </>
+                ))}
+              <div className="divider divider-info mt-8">Politics</div>
               {data &&
                 trending.map((item, i) => (
                   <>
