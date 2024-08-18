@@ -6,8 +6,7 @@ export const Home = () => {
   return (
     <>  
         <StockBar/>      
-        <HeroSection/>  
-             
+        <HeroSection/>               
     </>
   )
 }

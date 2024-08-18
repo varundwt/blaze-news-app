@@ -4,7 +4,7 @@ import {Link, Outlet} from 'react-router-dom'
 export const Navbar = () => {
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-gray-950">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +54,7 @@ export const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login"><a className="btn rounded-xl">Login</a></Link>
+          <Link to="/login"><a className="btn bg-gray-700 rounded-xl">Login</a></Link>
         </div>
       </div>
       <hr className="h-px bg-gray-900 border-0 dark:bg-gray-900" />

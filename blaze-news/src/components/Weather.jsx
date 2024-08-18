@@ -206,8 +206,7 @@ export const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
 
   function handleInput(e) {
-    setInput(e.target.value);
-    console.log(input);
+    setInput(e.target.value);    
   }
 
   async function getWeather() {
@@ -222,7 +221,7 @@ export const Weather = () => {
   return (
     <>
       {!button ? (
-        <div className="hero bg-black-200 pt-36">
+        <div className="hero bg-black-200 pt-12">
           <div className="hero-content text-center">
             <div className="max-w-md">
               <h1 className="text-5xl font-bold text-blue-300">
@@ -240,18 +239,18 @@ export const Weather = () => {
       ) : (
         <div className="m-24"></div>
       )}
-      <div className="flex w-full justify-center  ">
+      <div className="flex-row ml-auto mr-auto text-center">
+        <p className="py-2">Enter City Name:</p>
         <input
           type="text"
-          placeholder="Enter your city"
+          placeholder="Type here"
           onChange={handleInput}
           className="input input-bordered rounded-lg"
         />{" "}
-        <br />
-        &nbsp;
+        <br />        
         <button
           onClick={() => getWeather()}
-          className="btn btn-gray rounded-lg"
+          className="btn btn-gray rounded-lg mt-2"
         >
           Check Weather
         </button>
@@ -346,46 +345,46 @@ export const Weather = () => {
                 </div>
               </div>
               <div className="py-10 md:py-12 md:mt-auto md:mb-auto border rounded-xl p-7 md:p-1">
-                <div className="text-center justify-between text-lg py-2 md:text-center flex md:flex-wrap md:text-sm">
+                <div className="text-center justify-between text-sm py-2 md:text-center flex md:flex-wrap md:text-sm">
                   <div className="px-1 md:px-3 font-bold text-blue-200">
-                    <img src={Wind} alt="wind" className="h-12 mx-auto my-auto md:h-8"/>
+                    <img src={Wind} alt="wind" className="h-8 mx-auto my-auto md:h-8"/>
                     Wind{" "}
                     <div className="font-normal text-blue-100">
                       {weatherData.wind.speed} km/h
                     </div>{" "}
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
-                  <img src={Gust} alt="gust" className="h-12 mx-auto my-auto md:h-8"/>
+                  <img src={Gust} alt="gust" className="h-8 mx-auto my-auto md:h-8"/>
                     Gust{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.wind.gust} km/h
                     </div>{" "}
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
-                  <img src={Humidity} alt="humidity" className="h-12 mx-auto my-auto md:h-8"/>
+                  <img src={Humidity} alt="humidity" className="h-8 mx-auto my-auto md:h-8"/>
                     Humidity{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.main.humidity} %
                     </div>
                   </div>
                 </div>
-                <div className="text-center justify-between text-lg py-2 md:text-center flex md:flex-wrap md:text-sm mt-5">
+                <div className="text-center justify-between text-sm py-2 md:text-center flex md:flex-wrap md:text-sm mt-5">
                   <div className="px-1 md:px-3 font-bold text-blue-200">
-                  <img src={Pressure} alt="pressure" className="h-12 mx-auto my-auto md:h-8"/>
+                  <img src={Pressure} alt="pressure" className="h-8 mx-auto my-auto md:h-8"/>
                     Pressure{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.main.pressure} mB
                     </div>
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
-                  <img src={CloudCover} alt="cloud-cover" className="h-12 mx-auto my-auto md:h-8"/>
+                  <img src={CloudCover} alt="cloud-cover" className="h-8 mx-auto my-auto md:h-8"/>
                     Cloud Cover{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.clouds.all} %
                     </div>
                   </div>
                   <div className="px-1 md:px-3 font-bold text-blue-200">
-                  <img src={Visibilty} alt="visibilty" className="h-12 mx-auto my-auto md:h-8"/>
+                  <img src={Visibilty} alt="visibilty" className="h-8 mx-auto my-auto md:h-8"/>
                     Visibilty{" "}
                     <div className="font-normal text-gray-100">
                       {weatherData.visibility / 1000} km
